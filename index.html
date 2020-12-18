@@ -5,41 +5,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./public/css/style.css">
-  <title>CSS Helpers Demo</title>
+  <script src="./public/js/app.mjs" type="module" defer></script>
+  <title>Home | Code Me</title>
 
   <style>
-    h2 {
-      color: rgb(113, 40, 182);
-      text-align: center;
-    }
-
     .box {
+      background-image: linear-gradient(to right, blueviolet, rgb(113, 40, 182));
       width: 100%;
       min-height: 40px;
-      background-image: linear-gradient(to right, blueviolet, rgb(113, 40, 182));
       border-radius: 4px;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <h2 class="my-4">Grid Systems</h2>
+  <header>
+    <nav class="nav-md">
+      <div class="nav-brand">
+        <a href="">
+          <h3>HelloBrand</h3>
+        </a>
+      </div>
+      <div class="nav-links hide-for-mobile">
+        <a href="">Home</a>
+        <a href="">Portfolio</a>
+      </div>
+      <div class="nav-cta">
+        <button class="btn-xl btn-secondary">Sign up</button>
+      </div>
+    </nav>
+  </header>
 
-    <div class="row">
-      <div class="col-md-3">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+  <main class="my-1">
+    <div class="container-md">
+      <h4>Grid Systems</h4>
+
+      <div class="row">
+        <div class="col-lg-2">
+          <div class="container-full">
+            <div class="box"></div>
+          </div>
+          <div class="container-full">
+            <div class="box"></div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row my-2">
-      <div class="col-md-2">
-        <div class="box"></div>
-        <div class="box"></div>
+
+      <div class="row">
+        <div class="col-sm-1 col-md-2 col-lg-3 col-xl-4">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
       </div>
+
     </div>
-  </div>
+  </main>
 </body>
 
 </html>
