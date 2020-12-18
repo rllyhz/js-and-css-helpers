@@ -44,14 +44,20 @@ async function send(url, data, method, waiting = false) {
     // 
     if (waiting) {
       return await (await fetch(url, {
+        headers: {
+          'Content-Type': 'application/json'
+        },
         method: methods.POST,
-        body: data
+        body: JSON.stringify(data)
       })).json()
       // 
     } else {
       return fetch(url, {
+        headers: {
+          'Content-Type': 'application/json'
+        },
         method: methods.POST,
-        body: data
+        body: JSON.stringify(data)
       })
       // 
     }
@@ -62,14 +68,18 @@ async function send(url, data, method, waiting = false) {
     // 
     if (waiting) {
       return await (await fetch(url, {
-        method: methods.PUT,
-        body: data
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: methods.PUT
       })).json()
       // 
     } else {
       return fetch(url, {
-        method: methods.PUT,
-        body: data
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: methods.PUT
       })
       // 
     }
@@ -80,14 +90,18 @@ async function send(url, data, method, waiting = false) {
     // 
     if (waiting) {
       return await (await fetch(url, {
-        method: methods.DELETE,
-        body: data
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: methods.DELETE
       })).json()
       // 
     } else {
       return fetch(url, {
-        method: methods.DELETE,
-        body: data
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        method: methods.DELETE
       })
       // 
     }

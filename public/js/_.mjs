@@ -1,3 +1,12 @@
+/**
+ * @package _
+ * 
+ * Manipulating DOM
+ * 
+ * @author Rully Ihza Mahendra <rullyihza00@gmail.com>
+ * @license MIT
+ */
+
 let collection = null,
   cssSelector = null,
   callback = null
@@ -11,17 +20,36 @@ const LOG = {
   warning: 1
 }
 
+/**
+ * @class _
+ */
 class _ {
   activeElems
 
+  /**
+   * @constructor
+   * 
+   * @param elems Element|NodeList
+   */
   constructor(elems) {
     this.activeElems = elems
   }
 
+  /**
+   * Get the active elements
+   * 
+   * @returns Element|NodeList
+   */
   get() {
     return this.activeElems
   }
 
+  /**
+   * Run a callback to all of the active element
+   * 
+   * @param callback function
+   * @returns this
+   */
   each(callback) {
     if (typeof callback !== "function") {
       return log("'.each(callback)', The argument 'callback' must be a callable!", LOG.error)
@@ -35,6 +63,11 @@ class _ {
     return this
   }
 
+  /**
+   * Click the active element
+   * 
+   * @returns this
+   */
   click() {
     if (!options.all) {
       this.activeElems.click()
@@ -44,6 +77,12 @@ class _ {
   }
 
   // FOR CLASS
+  /**
+   * Add new class to the active element
+   * 
+   * @param className string
+   * @returns this
+   */
   addClass(className) {
     if (isUndefined(className)) {
       return log("'.addClass(className)' method needs at least 1 parameter, 0 given.", LOG.error)
@@ -64,6 +103,12 @@ class _ {
     return this
   }
 
+  /**
+   * Remove existing class in the active element
+   * 
+   * @param className string
+   * @returns this
+   */
   removeClass(className) {
     if (isUndefined(className)) {
       return log("'.removeClass(className)' method needs at least 1 parameter, 0 given.", LOG.error)
@@ -84,6 +129,11 @@ class _ {
     return this
   }
 
+  /**
+   * Toggle a class in the active element
+   * 
+   * @param className string
+   */
   toggle(className) {
     if (isUndefined(className)) {
       return log("'.toggle(className)' method needs at least 1 parameter, 0 given.", LOG.error)
@@ -108,6 +158,12 @@ class _ {
     return this
   }
 
+  /**
+   * Check whether the active element has specified class
+   * 
+   * @param className string
+   * @returns boolean
+   */
   contains(className) {
     if (isUndefined(className)) {
       return log("'.contains(className)' method needs at least 1 parameter, 0 given.", LOG.error)
@@ -126,6 +182,13 @@ class _ {
 
 
   // FOR ATTRIBUTES
+  /**
+   * Set or get an attribute
+   * 
+   * @param attr string
+   * @param value string
+   * @returns string|undefined
+   */
   attribute(attr, value = undefined) {
     if (isUndefined(attr)) {
       return log("'.attribute(attr, value)' method needs at least 1 parameter, 0 given.", LOG.error)
@@ -160,6 +223,12 @@ class _ {
     return this
   }
 
+  /**
+   * Check whether the active element has an attribute
+   * 
+   * @param attrName string
+   * @returns boolean
+   */
   has(attrName) {
     if (isUndefined(attrName)) {
       return log("'.has(attrName)' method needs at least 1 parameter, 0 given.", LOG.error)
@@ -177,6 +246,13 @@ class _ {
   }
 
   // FOR EVENT
+  /**
+   * Add specified event to the active element
+   * 
+   * @param event string
+   * @param callback function
+   * @returns this
+   */
   on(event, callback) {
     if (typeof event !== "string") {
       return log("'.on(event, callback)' The first argument 'event' must be a string!", LOG.error)
@@ -201,6 +277,13 @@ class _ {
     return this
   }
 
+  /**
+   * Remove the existing event of active element
+   * 
+   * @param event string
+   * @param existingCallback function
+   * @returns this
+   */
   removeEvent(event, existingCallback) {
     if (typeof event !== "string") {
       return log("'.on(event, existingCallback)' The first argument 'event' must be a string!", LOG.error)
@@ -225,6 +308,12 @@ class _ {
     return this
   }
 
+  /**
+   * Add a click event to the active element
+   * 
+   * @param callback function
+   * @returns this
+   */
   onClick(callback) {
     if (typeof callback !== "function") {
       return log("'.onClick(callback)' The argument 'callback' must be a callable!", LOG.error)
@@ -241,6 +330,12 @@ class _ {
     return this
   }
 
+  /**
+   * Add a mouseenter event to the active element
+   * 
+   * @param callback function
+   * @returns this
+   */
   onHover(callback) {
     if (typeof callback !== "function") {
       return log("'.onHover(callback)' The argument 'callback' must be a callable!", LOG.error)
@@ -257,6 +352,12 @@ class _ {
     return this
   }
 
+  /**
+   * Add a mouseout event to the active element
+   * 
+   * @param callback function
+   * @returns this
+   */
   onUnhover(callback) {
     if (typeof callback !== "function") {
       return log("'.onUnhover(callback)' The argument 'callback' must be a callable!", LOG.error)
@@ -274,6 +375,13 @@ class _ {
   }
 
   // FOR STYLES
+  /**
+   * Set a style to the active element
+   * 
+   * @param property string
+   * @param value string
+   * @returns this
+   */
   style(property = "", value = "") {
     if (!options.all) {
       this.activeElems.style[property] = value
@@ -286,6 +394,12 @@ class _ {
     return this
   }
 
+  /**
+   * Set some styles to the active element
+   * 
+   * @param propertyValueCssPairs object
+   * @returns this
+   */
   styles(propertyValueCssPairs) {
     if (propertyValueCssPairs == undefined) {
       return log("'.styles(propertyValueCssPairs)' method needs at least 1 parameter, 0 given.")
@@ -317,6 +431,11 @@ class _ {
   }
 
   // FOR VISIBILITY
+  /**
+   * Hide the active element
+   * 
+   * @returns this
+   */
   hide() {
     if (!options.all) {
       this.activeElems.style.visibility = "hidden"
@@ -333,6 +452,11 @@ class _ {
     return this
   }
 
+  /**
+   * Show the active element
+   * 
+   * @returns this
+   */
   show() {
     if (!options.all) {
       this.activeElems.style.visibility = "visible"
@@ -350,6 +474,13 @@ class _ {
   }
 }
 
+/**
+ * Break program and send a log message
+ * 
+ * @param message string
+ * @param type int
+ * @returns Error
+ */
 function log(message = "", type = 0) {
   let styles = "font-size:1.2rem; padding: 3rem; "
   let title = ""
@@ -369,16 +500,34 @@ function log(message = "", type = 0) {
   throw new Error("")
 }
 
+/**
+ * Check a value is undefined
+ * 
+ * @param value any
+ * @returns boolean
+ */
 function isUndefined(value) {
   if (value === undefined) { return true }
   return false
 }
 
+/**
+ * Check if value is null
+ * 
+ * @param value any
+ * @returns boolean
+ */
 function isNull(value) {
   if (value === null) { return true }
   return false
 }
 
+/**
+ * Check is object empty
+ * 
+ * @param object object
+ * @returns boolean
+ */
 function isEmptyOpbject(object) {
   if (typeof object !== "object") return true
 
@@ -391,6 +540,12 @@ function isEmptyOpbject(object) {
   return false
 }
 
+/**
+ * Check if string is empty
+ * 
+ * @param string string
+ * @returns boolean
+ */
 function isEmptyString(string) {
   if (typeof string !== "string") return true
 
@@ -400,6 +555,10 @@ function isEmptyString(string) {
   return false
 }
 
+/**
+ * Get element by the given css selector
+ * @param selector string
+ */
 function getElements(selector = "") {
   if (isNull(selector)) return
 
@@ -418,12 +577,21 @@ function getElements(selector = "") {
   }
 }
 
+/**
+ * Run the callback
+ */
 function runCallback() {
   if (callback !== null) {
     callback()
   }
 }
 
+/**
+ * Prepare up
+ * 
+ * @param arg any
+ * @param opt object
+ */
 function prepareUp(arg, opt = null) {
 
   if (isUndefined(arg)) {
@@ -446,6 +614,11 @@ function prepareUp(arg, opt = null) {
   }
 }
 
+/**
+ * Solve all the given paramaters
+ * 
+ * @returns _
+ */
 function solve() {
   if (isNull(cssSelector)) return
 
@@ -453,7 +626,9 @@ function solve() {
   return collection
 }
 
-
+/**
+ * Exporting the helpers out
+ */
 export default (arg, opt = null) => {
   prepareUp(arg, opt)
   return solve()

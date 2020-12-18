@@ -1,5 +1,6 @@
-import _ from "./_.mjs"
-import _req from "./_req.mjs"
+// import _ from "./_.mjs"
+// import _req from "./_req.mjs"
+import _ from "./_http.mjs"
 
 function getElem(cssSelector, getAll = false) {
   if (getAll) {
@@ -71,21 +72,17 @@ async function main(e) {
 
   // Demo _req()
 
+  // Synchronously
   // const result = await _req.get("data.json", true)
-  // console.log(result)
+  // console.log(result.data)
 
+  // Asynchronously
   // _req
   //   .get("data.json")
   //   .then(res => res.json())
-  //   .then(res => console.log(res))
+  //   .then(res => console.log(res.data))
 
-  // _req
-  //   .post("http://localhost:8000/user", {
-  //     nama: "user 1",
-  //     nim: "5302418034"
-  //   })
-  //   .then(res => res.json())
-  //   .then(res => console.log(res))
+  console.log(_(""))
 
 }
 
