@@ -1,5 +1,4 @@
 // import _ from "./_.mjs"
-// import _req from "./_req.mjs"
 import _ from "./_http.mjs"
 
 function getElem(cssSelector, getAll = false) {
@@ -10,89 +9,101 @@ function getElem(cssSelector, getAll = false) {
   }
 }
 
+function createElem(tagName, className = null, innerText = null) {
+  const elem = document.createElement(tagName)
+
+  if (className !== null) elem.classList.add(className)
+  if (innerText !== null) elem.innerText = innerText
+
+  return elem
+}
+
+const simpleHttp = (url, options = null) => {
+  if (!url) return
+
+  if (options === null) {
+    return fetch(url)
+  }
+
+  return fetch(url, options)
+}
+
+
+function remove_linebreaks(str) {
+  return str.replace(/[\r\n]+/gm, "");
+}
+
+function makeTitle(str) {
+  return str.split(" ")
+    .map(word => capitalize(word))
+    .join(" ")
+}
+
+function capitalize(str) {
+  let word = ""
+
+
+  for (let i = 0; i < str.length; i++) {
+    if (i == 0) {
+      word += (str.charAt(i)).toUpperCase()
+      continue;
+    }
+
+    word += str.charAt(i)
+  }
+
+  return word
+}
+
+
+const endpoints = {
+  posts: "poinst",
+  comments: "comments",
+}
+
+function getData(endpoint, callback) {
+  const baseUrl = "https://jsonplaceholder.typicode.com"
+  const url = `${baseUrl}/${endpoint}`
+
+  simpleHttp(url)
+    .then(res => res.json())
+    .then(res => callback(res))
+    .catch(err => console.log(err))
+}
+
+function initUI(data, containerMain) {
+
+  data.forEach(dt => {
+    const container = createElem("div", "container")
+    const card = createElem("div", "card")
+    const titleElem = createElem("h3", "title")
+    const bodyElem = createElem("div", "body")
+
+    let title = remove_linebreaks(dt.title)
+    let body = remove_linebreaks(dt.body)
+
+    title = makeTitle(title)
+    body = capitalize(body)
+
+    card.classList.add("mb-1")
+    titleElem.classList.add("mb-2")
+    titleElem.innerText = title
+    bodyElem.innerText = body
+
+    card.appendChild(titleElem)
+    card.appendChild(bodyElem)
+
+    container.appendChild(card)
+    containerMain.appendChild(container)
+  })
+}
+
 async function main(e) {
+  const containerMain = getElem("#container-main")
 
-  // as default, ''.get()' method always returns only one active element.
-  // _("div").get()
-  // and runs any methods for it
-  // to change this behavior set the selected elements to be an active state,
-  // by passing an option, like this:
-  // _("div", { all: true }).get()
-
-  // hide element
-  // _("a").hide()
-  // show element
-  // _("a").show()
-  // click element
-  // _("a").click()
-
-  // get the element currently selected
-  // console.log(_("button").get())
-
-  // add new class
-  // _("button").addClass("btn-secondary")
-  // remove an existing class
-  // _("button").removeClass("btn-secondary")
-  // toggle a class
-  // _("button").toggle("newClass")
-
-  // get value of class attribute
-  // console.log(_("button").attribute("class"))
-  // set attribute class to "newClass"
-  // _("button").attribute("class", "newClass")
-
-  // set a style
-  // _("button").style("color", "aliceblue")
-  // set some styles
-  // _("button").styles({
-  //   backgroundColor: "blue",
-  //   color: "white",
-  //   fontSize: "2rem"
-  // })
-
-  // add on click event
-  // _("button").onClick(e => alert("clicked."))
-  // add on mouse enter event
-  // _("button").onHover(e => alert("Mouse enter."))
-  // add on mouse out event
-  // _("button").onUnhover(e => alert("Mouse out."))
-
-  // add any event to the element
-  // _("#button").on("click", e => alert("Clicked."))
-
-  // remove existing event
-  // function callback(e) {
-  //   console.log(e)
-  // }
-
-  // _("button").onClick(callback)
-  // _("button").removeEvent("click", callback)
-
-
-
-  // Demo _req()
-
-  // Synchronously
-  // const result = await _req.get("data.json", true)
-  // console.log(result.data)
-
-  // Asynchronously
-  // _req
-  //   .get("data.json")
-  //   .then(res => res.json())
-  //   .then(res => console.log(res.data))
-
-  _("https://jsonplaceholder.typicode.com/posts")
-    .then(res => res.json())
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
-
-  _("https://jsonplaceholder.typicode.com/comments")
-    .then(res => res.json())
-    .then(res => console.log(res))
-    .catch(err => console.log(err))
-
-
+  getData("posts", async function (data) {
+    initUI(data, containerMain)
+  })
 }
 
 document.addEventListener("DOMContentLoaded", main);
