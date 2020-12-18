@@ -3,13 +3,13 @@
 | judul | desctiption |
 | ----- | ----------- |
 | [Title](#title) | Title of page |
-| [Features](#features) | ... |
-| [Installation](#installation) | ... |
+| [Features](#features) | Features of these library |
+| [Installation](#installation) | Instrusctions for installing the library |
 | [Javascript Helpers](#javascript-helpers) | ... |
 | [Available Methods](#available-methods) | ... |
 | [Javascript Helpers Usage](#javascript-helpers-usage) | ... |
-| [Javascript Helpers Usage](#javascript-helpers-usage) | ... |
-| [Javascript Helpers Usage](#javascript-helpers-usage) | ... |
+| [CSS Helpers](#css-helpers) | ... |
+| [CSS Helpers Usage](#css-helpers-usage) | ... |
 
 
 <h1 id="title"><b>JS and CSS Helpers</b></h1>
