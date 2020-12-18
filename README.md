@@ -56,35 +56,41 @@ This javascript helper is the **_()** function that can help us to easily manage
 
 <h3 id="available-methods"><b>Available Methods</b></h3>
 
-- **_`.get()`_** method, to get the selected element.
+- **_`.get()`_** method, to **get** the selected element.
 
-- **_`.click()`_** method, to click the selected element.
+- **_`.click()`_** method, to **click** the selected element.
 
-- **_`.hide()`_** method, to the selected element disappear.
+- **_`.hide()`_** method, to **make** the selected element **disappear**.
 
-- **_`.show()`_** method, to make the selected element appear.
+- **_`.show()`_** method, to **make** the selected element **appear**.
 
-- **_`.addClass()`_** method, to add new class to the selected element.
+- **_`.addClass()`_** method, to **add** new class to the selected element.
 
-- **_`.removeClass()`_** method, to remove existing class in the selected element.
+- **_`.removeClass()`_** method, to **remove** existing class in the selected element.
 
-- **_`.toggle()`_** method, to toggle a class in the selected element.
+- **_`.toggle()`_** method, to **toggle** a class in the selected element.
 
-- **_`.attribute()`_** method, to manage (_get and set_) attributes of the selected element.
+- **_`.contains()`_** method, to **check** whether the element has a class or not.
 
-- **_`.style()`_** method, to add **a style** to the selected element.
+- **_`.attribute()`_** method, to **manage** (_get and set_) attributes of the selected element.
 
-- **_`.styles()`_** method, to add **some styles** to the selected element.
+- **_`.has()`_** method, to **check** whether the element has an attribute.
 
-- **_`.on()`_** method, to add **any event** to the selected element.
+- **_`.style()`_** method, to **add** **_a style_** to the selected element.
 
-- **_`.onClick()`_** method, to add a new **click event** to the selected element.
+- **_`.styles()`_** method, to **add** **_some styles_** to the selected element.
 
-- **_`.onHover()`_** method, to add a new **mouseenter event** to the selected element.
+- **_`.on()`_** method, to **add** **_any event_** to the selected element.
 
-- **_`.onUnhover()`_** method, to add a new **mouseout event** to the selected element.
+- **_`.onClick()`_** method, to **add** a new **_click event_** to the selected element.
 
-- **_`.removeEvent()`_** method, to remove existing event in the selected element.
+- **_`.onHover()`_** method, to **add** a new **_mouseenter event_** to the selected element.
+
+- **_`.onUnhover()`_** method, to **add** a new **_mouseout event_** to the selected element.
+
+- **_`.removeEvent()`_** method, to **remove** existing event in the selected element.
+
+<br>
 
 <h2 id="javascript-helpers-usage"><b>Usage</b></h4>
 
@@ -171,6 +177,9 @@ console.log(_("button").attribute("class"))
 
 // set attribute named class to "newClass"
 _("button").attribute("class", "isClicked")
+
+// check if element has an attribute named "title"
+_("button").has("title") // return true if it does, otherwise false
 
 ```
 
