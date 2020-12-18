@@ -419,6 +419,6 @@ For example, in **`index.html`** file we have a bunch of lines of code as below 
 | Social Media | Link |
 | :-           | :-: |
 | [Github](https://github.com/rllyhz "My Github Page") | [https://github.com/rllyhz](https://github.com/rllyhz "My Github Page")
-| [Twitter](https://twitter.com/rullyihza_ "Follow me on Twitter") | [https://twitter.com/rullyihza_](https://twitter.com/rllyhz "Follow me on Twitter")
+| [Twitter](https://twitter.com/rullyihza_ "Follow me on Twitter") | [https://twitter.com/rullyihza_](https://twitter.com/rullyihza_ "Follow me on Twitter")
 | [Instagram](https://instagram.com/rllyhz "Follow me on Instagram") | [https://instagram.com/rllyhz](https://instagram.com/rllyhz "Follow me on Instagram")
 | [Facebook](https://facebook.com/rully.ihza "Follow me on Facebook") | [https://facebook.com/rully.ihza](https://facebook.com/rully.ihza "Follow me on Facebook")
