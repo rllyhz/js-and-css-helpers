@@ -36,6 +36,7 @@
   }
 }
 
+
 // FOR GRID SMALL SCREEN
 @for $indexColumn from $totalGridColumn to 1 {
   .row {
@@ -43,7 +44,7 @@
       .col-sm {
         @include gridContainer();
 
-        @media (max-width: 678px) {
+        @media (max-width: $smallScreenSizeMax) {
           grid-template-columns: repeat($indexColumn, 1fr);
         }
       }
@@ -53,13 +54,14 @@
       .col-sm-#{$indexColumn} {
         @include gridContainer();
 
-        @media (max-width: 678px) {
+        @media (max-width: $smallScreenSizeMax) {
           grid-template-columns: repeat($indexColumn, 1fr);
         }
       }
     }
   }
 }
+
 
 // FOR GRID MEDIUM SCREEN
 @for $indexColumn from $totalGridColumn to 1 {
@@ -68,7 +70,7 @@
       .col-md {
         @include gridContainer();
 
-        @media (min-width:679px) and (max-width: 1099px) {
+        @media (min-width: $mediumScreenSizeMin) and (max-width: $mediumScreenSizeMax) {
           grid-template-columns: repeat($indexColumn, 1fr);
         }
       }
@@ -78,13 +80,14 @@
       .col-md-#{$indexColumn} {
         @include gridContainer();
 
-        @media (min-width:679px) and (max-width: 1099px) {
+        @media (min-width: $mediumScreenSizeMin) and (max-width: $mediumScreenSizeMax) {
           grid-template-columns: repeat($indexColumn, 1fr);
         }
       }
     }
   }
 }
+
 
 // FOR GRID LARGE SCREEN
 @for $indexColumn from $totalGridColumn to 1 {
@@ -93,7 +96,7 @@
       .col-lg {
         @include gridContainer();
 
-        @media (min-width: 1100px) and (max-width: 1300px) {
+        @media (min-width: $largeScreenSizeMin) and (max-width: $largeScreenSizeMax) {
           grid-template-columns: repeat($indexColumn, 1fr);
         }
       }
@@ -103,7 +106,7 @@
       .col-lg-#{$indexColumn} {
         @include gridContainer();
 
-        @media (min-width: 1100px) and (max-width: 1300px) {
+        @media (min-width: $largeScreenSizeMin) and (max-width: $largeScreenSizeMax) {
           grid-template-columns: repeat($indexColumn, 1fr);
         }
       }
@@ -118,7 +121,7 @@
       .col-xl {
         @include gridContainer();
 
-        @media (min-width: 1301px) {
+        @media (min-width: $xlargeScreenSizeMin) {
           grid-template-columns: repeat($indexColumn, 1fr);
         }
       }
@@ -128,7 +131,7 @@
       .col-xl-#{$indexColumn} {
         @include gridContainer();
 
-        @media (min-width: 1301px) {
+        @media (min-width: $xlargeScreenSizeMin) {
           grid-template-columns: repeat($indexColumn, 1fr);
         }
       }

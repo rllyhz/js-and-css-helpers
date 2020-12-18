@@ -1,0 +1,21 @@
+$textAlignValues: (center, start, end, justify, left, right);
+$textDecorationValues: (none, dashed, dotted, double, line-through, solid, overline, underline, wavy);
+
+@each $value in $textAlignValues {
+  .text-#{$value} {
+    text-align: $value !important;
+  }
+}
+
+@each $value in $textDecorationValues {
+  @if $value == none {
+    .text-decoration-none {
+      text-decoration: $value !important;
+    }
+  }
+  @if $value != none {
+    .text-#{$value} {
+      text-decoration: $value !important;
+    }
+  }
+}

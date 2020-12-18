@@ -1,7 +1,0 @@
-$textAlignValues: ("center", "start", "end", "justify", "left", "right");
-
-@each $value in $textAlignValues {
-  .text-#{$value} {
-    text-align: $value;
-  }
-}

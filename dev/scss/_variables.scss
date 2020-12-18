@@ -81,6 +81,17 @@ $paddingSize: 0.65rem;
 $totalGridColumn: 12;
 $gridGap: .2rem;
 
+// For small screen
+$smallScreenSizeMax: 678px; 
+// For small screen
+$mediumScreenSizeMin: 679px;
+$mediumScreenSizeMax: 1099px;
+// For large screen
+$largeScreenSizeMin: 1100px;
+$largeScreenSizeMax: 1300px;
+// For xlarge screen
+$xlargeScreenSizeMin: 1301px;
+
 
 //  --------------------------------------------------
 //  ------------------- ANIMATIONS -------------------

@@ -778,14 +778,14 @@ main p, main a, main h1, main h2, main h3, main h4, main h5, main h6, main.main 
   margin-bottom: 3.25rem;
 }
 
-.py-0 {
-  padding-top: 0rem;
-  padding-bottom: 0rem;
+.mx-6 {
+  margin-left: 3.9rem;
+  margin-right: 3.9rem;
 }
 
-.px-0 {
-  padding-left: 0rem;
-  padding-right: 0rem;
+.my-6 {
+  margin-top: 3.9rem;
+  margin-bottom: 3.9rem;
 }
 
 .py-1 {
@@ -838,20 +838,14 @@ main p, main a, main h1, main h2, main h3, main h4, main h5, main h6, main.main 
   padding-right: 3.25rem;
 }
 
-.mt-0 {
-  margin-top: 0rem;
+.py-6 {
+  padding-top: 3.9rem;
+  padding-bottom: 3.9rem;
 }
 
-.mr-0 {
-  margin-right: 0rem;
-}
-
-.mb-0 {
-  margin-bottom: 0rem;
-}
-
-.ml-0 {
-  margin-left: 0rem;
+.px-6 {
+  padding-left: 3.9rem;
+  padding-right: 3.9rem;
 }
 
 .mt-1 {
@@ -934,20 +928,20 @@ main p, main a, main h1, main h2, main h3, main h4, main h5, main h6, main.main 
   margin-left: 3.25rem;
 }
 
-.pt-0 {
-  padding-top: 0rem;
+.mt-6 {
+  margin-top: 3.9rem;
 }
 
-.pr-0 {
-  padding-right: 0rem;
+.mr-6 {
+  margin-right: 3.9rem;
 }
 
-.pb-0 {
-  padding-bottom: 0rem;
+.mb-6 {
+  margin-bottom: 3.9rem;
 }
 
-.pl-0 {
-  padding-left: 0rem;
+.ml-6 {
+  margin-left: 3.9rem;
 }
 
 .pt-1 {
@@ -1028,6 +1022,131 @@ main p, main a, main h1, main h2, main h3, main h4, main h5, main h6, main.main 
 
 .pl-5 {
   padding-left: 3.25rem;
+}
+
+.pt-6 {
+  padding-top: 3.9rem;
+}
+
+.pr-6 {
+  padding-right: 3.9rem;
+}
+
+.pb-6 {
+  padding-bottom: 3.9rem;
+}
+
+.pl-6 {
+  padding-left: 3.9rem;
+}
+
+.m-1 {
+  margin: 0.65rem;
+}
+
+.p-1 {
+  margin: 0.65rem;
+}
+
+.m-2 {
+  margin: 1.3rem;
+}
+
+.p-2 {
+  margin: 1.3rem;
+}
+
+.m-3 {
+  margin: 1.95rem;
+}
+
+.p-3 {
+  margin: 1.95rem;
+}
+
+.m-4 {
+  margin: 2.6rem;
+}
+
+.p-4 {
+  margin: 2.6rem;
+}
+
+.m-5 {
+  margin: 3.25rem;
+}
+
+.p-5 {
+  margin: 3.25rem;
+}
+
+.m-6 {
+  margin: 3.9rem;
+}
+
+.p-6 {
+  margin: 3.9rem;
+}
+
+/* TEXT HELPERS */
+.text-center {
+  text-align: center !important;
+}
+
+.text-start {
+  text-align: start !important;
+}
+
+.text-end {
+  text-align: end !important;
+}
+
+.text-justify {
+  text-align: justify !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.text-dashed {
+  text-decoration: dashed !important;
+}
+
+.text-dotted {
+  text-decoration: dotted !important;
+}
+
+.text-double {
+  text-decoration: double !important;
+}
+
+.text-line-through {
+  text-decoration: line-through !important;
+}
+
+.text-solid {
+  text-decoration: solid !important;
+}
+
+.text-overline {
+  text-decoration: overline !important;
+}
+
+.text-underline {
+  text-decoration: underline !important;
+}
+
+.text-wavy {
+  text-decoration: wavy !important;
 }
 
 /* COMPONENTS */

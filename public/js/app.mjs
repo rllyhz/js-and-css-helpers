@@ -86,7 +86,8 @@ function initUI(data, containerMain) {
     body = capitalize(body)
 
     card.classList.add("mb-1")
-    titleElem.classList.add("mb-2")
+    titleElem.classList.add("mb-3")
+    titleElem.classList.add("text-center")
     titleElem.innerText = title
     bodyElem.innerText = body
 

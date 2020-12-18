@@ -6,7 +6,7 @@
 
 
 // MARGIN VERTICALLY & HORIZONTALLY
-@for $index from 1 to $totalVariantSizes {
+@for $index from 1 to $totalVariantSizes + 1 {
   .mx-#{$index} {
     margin-left: $index * $marginSize;
     margin-right: $index * $marginSize;
@@ -19,7 +19,7 @@
 }
 
 // PADDING VERTICALLY & HORIZONTALLY
-@for $index from 0 to $totalVariantSizes {
+@for $index from 1 to $totalVariantSizes + 1 {
   .py-#{$index} {
     padding-top: $index * $paddingSize;
     padding-bottom: $index * $paddingSize;
@@ -32,8 +32,8 @@
 }
 
 
-// MARGIN
-@for $index from 0 to $totalVariantSizes {
+// MARGIN IN EACH SIDE
+@for $index from 1 to $totalVariantSizes + 1 {
   .mt-#{$index} {
     margin-top: $index * $marginSize;
   }
@@ -51,8 +51,8 @@
   }
 }
 
-// PADDING
-@for $index from 0 to $totalVariantSizes {
+// PADDING IN EACH SIDE
+@for $index from 1 to $totalVariantSizes + 1 {
   .pt-#{$index} {
     padding-top: $index * $paddingSize;
   }
@@ -67,5 +67,17 @@
 
   .pl-#{$index} {
     padding-left: $index * $paddingSize;
+  }
+}
+
+
+// MARGIN AND PADDING IN ALL SIDES
+@for $index from 1 to $totalVariantSizes + 1 {
+  .m-#{$index} {
+    margin: $index * $marginSize;
+  }
+
+  .p-#{$index} {
+    margin: $index * $paddingSize;
   }
 }
