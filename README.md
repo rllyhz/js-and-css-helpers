@@ -258,6 +258,7 @@ For example, in **_index.html_** file we have a bunch of lines of code as below 
 ```html
 
 <!-- 2 columns in small screen -->
+
 <div class="row">
   <div class="col-sm-2">
     <div class="box"></div>
@@ -266,10 +267,13 @@ For example, in **_index.html_** file we have a bunch of lines of code as below 
 </div>
 
 
-<!-- 2 columns in medium screen -->
-<!-- and 1 column in small screen -->
+
+<!-- 4 columns in large screen -->
+<!-- 2 column in medium screen -->
+<!-- 1 column in small screen -->
+
 <div class="row">
-  <div class="col-md-3 col-sm-1">
+  <div class="col-lg-4 col-md-2 col-sm-1">
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
@@ -277,7 +281,9 @@ For example, in **_index.html_** file we have a bunch of lines of code as below 
 </div>
 
 
+
 <!-- available columns are up to 11 -->
+
 <div class="row">
   <div class="col-sm-11">
     <div class="box"></div>
@@ -287,8 +293,27 @@ For example, in **_index.html_** file we have a bunch of lines of code as below 
 </div>
 
 
+
+<!-- available media screen are sm, md, lg, and xl -->
+
+<div class="row">
+  <div class="col-sm-2 col-md-4 col-lg-8 col-lg-8">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</div>
+
+
+
 <!-- if you want to use 12 columns, -->
-<!-- use col-sm, col-md, col-lg, col-xl -->
+<!-- use col-sm, col-md, col-lg, and col-xl -->
+
 <div class="row">
   <div class="col-xl">
     <div class="box"></div>
@@ -303,3 +328,42 @@ For example, in **_index.html_** file we have a bunch of lines of code as below 
 
 #### **Margin and Padding**
 
+```html
+
+<!-- MARGIN -->
+
+<div class="my-2">
+  <img src="https://google.com/images/20" alt="Image" />
+</div>
+
+<div class="mx-3">
+  <img src="https://google.com/images/20" alt="Image" />
+</div>
+
+
+<!-- Margin top, right, bottom, and left -->
+
+<div class="mt-2 mr-2 mb-3 ml-1">
+  <img src="https://google.com/images/20" alt="Image" />
+</div>
+
+
+
+<!-- PADDING -->
+
+<div class="py-1">
+  <img src="https://google.com/images/20" alt="Image" />
+</div>
+
+<div class="px-4">
+  <img src="https://google.com/images/20" alt="Image" />
+</div>
+
+
+<!-- Padding top, right, bottom, and left -->
+
+<div class="pt-2 pr-2 pb-3 pl-1">
+  <img src="https://google.com/images/20" alt="Image" />
+</div>
+
+```
