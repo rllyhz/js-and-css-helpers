@@ -1,4 +1,6 @@
-# **Library for starting web project**
+# **JS and CSS Helpers**
+
+Library for starting web project
 
 ### **Features :**
 
