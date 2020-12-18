@@ -94,21 +94,48 @@ function isEmptyString(string) {
  * @param url string
  * @param opt object
  */
-function processParams(url, opt) {
+function processParams(url, opt = null) {
   if (isUndefined(url)) return log("'.send(url, opt)' method needs at least 1 parameter, 0 given.")
   if (typeof url !== "string") return log("'.send(url, opt)' The argument 'url' must be a string!")
   if (isEmptyString(url)) return log("'.send(url, opt)' The argument 'url' can not be an empty string!")
 
-  if (!isNull(opt) && (typeof opt !== "object")) return log("'.send(url, opt)' The second argument 'opt' must be an object!")
-  if (isEmptyObject(opt)) return log("'.send(url, opt)' The second argument 'opt' can not be an empty object!")
+  if (!isNull(opt)) {
+    if (typeof opt !== "object") return log("'.send(url, opt)' The second argument 'opt' must be an object!")
+    if (isEmptyObject(opt)) return log("'.send(url, opt)' The second argument 'opt' can not be an empty object!")
 
-  const keys = Object.keys(opt)
+    const keys = Object.keys(opt)
 
-  if (keys.length <= 0) return
+    if (keys.length <= 0) return
 
-  keys.forEach(key => {
-    options[key] = opt[key]
-  })
+    keys.forEach(key => {
+      if (key == "method") {
+        options[key] = (opt[key]).toUpperCase()
+      } else {
+        options[key] = opt[key]
+      }
+    })
+  }
+}
+
+/**
+ * Check options
+ */
+function checkOptions() {
+  if (methods.GET === options.method) return
+
+  if (methods.DELETE === options.method) return
+
+  if (methods.POST === options.method) {
+    if (isNull(options.body) || isUndefined(options.body)) {
+      return log("Method POST needs the 'body' as required parameter.")
+    }
+  }
+
+  if (methods.PUT === options.method) {
+    if (isNull(options.body) || isUndefined(options.body)) {
+      return log("Method PUT needs the 'body' as required parameter.")
+    }
+  }
 }
 
 
@@ -135,15 +162,38 @@ const LOG = {
   warning: 1
 }
 
+function send(url, method, data) {
+  // 
+}
+
 /**
- * Send the request
+ * Handle the request
  * 
  * @param url string
- * @param opt object
+ * @param method string
  * @returns response Promise
  */
-function send(url, opt) {
-  console.log(options)
+function handle(url, method) {
+  checkOptions()
+
+  if (methods.GET === method) return fetch(url)
+
+  if (methods.DELETE === method) {
+    return fetch(url, {
+      method: methods.DELETE
+    })
+  }
+
+  if (isNull(options.body) || isUndefined(options.body)) {
+    delete options["body"]
+  } else {
+    if (typeof options.body !== 'string') {
+      options.body = JSON.stringify(options.body)
+    }
+  }
+
+  if (methods.POST === method) return fetch(url, options)
+  if (methods.PUT === method) return fetch(url, options)
 }
 
 /**
@@ -155,7 +205,7 @@ function send(url, opt) {
  */
 const _ = (url, opt = null) => {
   processParams(url, opt)
-  return send(url, opt)
+  return handle(url, options.method)
 }
 
 export default _

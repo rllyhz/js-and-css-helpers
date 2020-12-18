@@ -82,7 +82,16 @@ async function main(e) {
   //   .then(res => res.json())
   //   .then(res => console.log(res.data))
 
-  console.log(_("data"))
+  _("https://jsonplaceholder.typicode.com/posts")
+    .then(res => res.json())
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+
+  _("https://jsonplaceholder.typicode.com/comments")
+    .then(res => res.json())
+    .then(res => console.log(res))
+    .catch(err => console.log(err))
+
 
 }
 

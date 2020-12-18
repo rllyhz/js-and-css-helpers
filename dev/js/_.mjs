@@ -528,13 +528,13 @@ function isNull(value) {
  * @param object object
  * @returns boolean
  */
-function isEmptyOpbject(object) {
+function isEmptyObject(object) {
   if (typeof object !== "object") return true
 
   // Object.keys(obj).length <= 0
   // Object.entries(obj).length <= 0
 
-  if (JSON.stringify(obj) === JSON.stringify({})) {
+  if (JSON.stringify(object) === JSON.stringify({})) {
     return true
   }
   return false
@@ -598,7 +598,7 @@ function prepareUp(arg, opt = null) {
     return log(`'_()' function needs at least 1 parameter, 0 given.`, LOG.error)
   }
 
-  if (!isNull(opt) && !isEmptyOpbject(opt)) {
+  if (!isNull(opt) && !isEmptyObject(opt)) {
     options.all = opt.all ? opt.all : options.all
   }
 
