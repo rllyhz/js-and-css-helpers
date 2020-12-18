@@ -57,7 +57,7 @@ async function main(e) {
   // _("button").onUnhover(e => alert("Mouse out."))
 
   // add any event to the element
-  // _("button").on("click", e => alert("Clicked."))
+  // _("#button").on("click", e => alert("Clicked."))
 
   // remove existing event
   // function callback(e) {
@@ -86,6 +86,7 @@ async function main(e) {
   //   })
   //   .then(res => res.json())
   //   .then(res => console.log(res))
+
 }
 
 document.addEventListener("DOMContentLoaded", main);
