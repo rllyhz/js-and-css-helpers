@@ -2,7 +2,6 @@
 
 **Helper for easily creating web project**.
 
-<br>
 
 ### **Features :**
 
@@ -20,13 +19,11 @@
     2. Margin and padding helper classes.
     3. Theme preferences.
 
-<br><br>
 
 # Javascript Helpers
 
 This javascript helper is the **_()** function that can help us to manage element in javascript.
 
-<br>
 
 ### **Available Methods**
 
@@ -60,7 +57,6 @@ This javascript helper is the **_()** function that can help us to manage elemen
 
 - **_.removeEvent()_** method, to remove existing event in the selected element.
 
-<br>
 
 ## **Usage**
 
@@ -191,7 +187,6 @@ _("button").removeEvent("click", callback)
 
 ```
 
-<br><br>
 
 # CSS Helpers
 
@@ -253,7 +248,6 @@ For example, in **_index.html_** file we have a bunch of lines of code as below 
 
 ![Example for css helpers](images/example-css.png)
 
-<br>
 
 ## **Usage**
 
@@ -328,7 +322,6 @@ For example, in **_index.html_** file we have a bunch of lines of code as below 
 
 ```
 
-<br>
 
 #### **Margin and Padding**
 
