@@ -1,8 +1,22 @@
-# **JS and CSS Helpers**
+<h2 id="table-of-contents">Table of Contents</h2>
+
+| judul | desctiption |
+| ----- | ----------- |
+| [Title](#title) | Title of page |
+| [Features](#features) | ... |
+| [Installation](#installation) | ... |
+| [Javascript Helpers](#javascript-helpers) | ... |
+| [Available Methods](#available-methods) | ... |
+| [Javascript Helpers Usage](#javascript-helpers-usage) | ... |
+| [Javascript Helpers Usage](#javascript-helpers-usage) | ... |
+| [Javascript Helpers Usage](#javascript-helpers-usage) | ... |
+
+
+<h1 id="title"><b>JS and CSS Helpers</b></h1>
 
 Helper for easily creating web project.
 
-### **Features :**
+<h3 id="features"><b>Features :</b></h3>
 
 1. **JavaScript Helper for client operation**
     1. Selecting element easily.
@@ -20,12 +34,17 @@ Helper for easily creating web project.
 
 <br>
 
-# Javascript Helpers
+<h2 id="installation">Installation</h2>
+
+Heloodfsd
+
+<br>
+
+<h1 id="javascript-helpers">Javascript Helpers</h1>
 
 This javascript helper is the **_()** function that can help us to manage element in javascript.
 
-
-### **Available Methods**
+<h3 id="available-methods"><b>Available Methods</b></h3>
 
 - **_.get()_** method, to get the selected element.
 
@@ -57,10 +76,10 @@ This javascript helper is the **_()** function that can help us to manage elemen
 
 - **_.removeEvent()_** method, to remove existing event in the selected element.
 
-
-## **Usage**
+<h2 id="javascript-helpers-usage"><b>Usage</b></h4>
 
 #### **Select and get element**
+
 In order to select an element using this helper, use this code below :
 
 ```js
@@ -189,7 +208,7 @@ _("button").removeEvent("click", callback)
 
 <br>
 
-# CSS Helpers
+<h1 id="css-helpers">CSS Helpers</h1>
 
 CSS Helper is css library contains a bunch of classes ready to use, like **_py-2_** to indicate that the element has **_padding-top)** and **_padding-bottom_** with the value is 2 (could be _2rem_, _2px_, _2%_, etc).
 
@@ -250,7 +269,7 @@ For example, in **_index.html_** file we have a bunch of lines of code as below 
 ![Example for css helpers](images/example-css.png)
 
 
-## **Usage**
+<h2 id="css-helpers-usage"><b>Usage</b></h4>
 
 #### **Grid systems**
 
