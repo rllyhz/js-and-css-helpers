@@ -290,6 +290,7 @@ For example, in **`index.html`** file we have a bunch of lines of code as below 
 
 ![Example for css helpers](images/example-css.png)
 
+<br>
 
 <h2 id="css-helpers-usage"><b>Usage</b></h4>
 
