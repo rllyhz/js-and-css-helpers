@@ -71,21 +71,21 @@ async function main(e) {
 
   // Demo _req()
 
-  const result = await _req.get("data.json", true)
-  console.log(result)
+  // const result = await _req.get("data.json", true)
+  // console.log(result)
 
-  _req
-    .get("data.json")
-    .then(res => res.json())
-    .then(res => console.log(res))
+  // _req
+  //   .get("data.json")
+  //   .then(res => res.json())
+  //   .then(res => console.log(res))
 
-  _req
-    .post("http://localhost:8000/user", {
-      nama: "user 1",
-      nim: "5302418034"
-    })
-    .then(res => res.json())
-    .then(res => console.log(res))
+  // _req
+  //   .post("http://localhost:8000/user", {
+  //     nama: "user 1",
+  //     nim: "5302418034"
+  //   })
+  //   .then(res => res.json())
+  //   .then(res => console.log(res))
 }
 
 document.addEventListener("DOMContentLoaded", main);
