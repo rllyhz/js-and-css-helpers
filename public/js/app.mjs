@@ -90,6 +90,12 @@ async function main(e) {
 
 // document.addEventListener("DOMContentLoaded", main);
 
-const result = _("#test").contains("newClass")
+_("#test").addClass("newClass")
+const exists = _("#test").has("style")
+let result
+
+if (exists) {
+  result = _("#test").attribute("style")
+}
 
 console.log(result)

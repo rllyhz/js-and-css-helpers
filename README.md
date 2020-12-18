@@ -149,17 +149,20 @@ _("#btn").click()
 ```js
 
 // add new class
-_("button").addClass("btn-secondary")
+_("#btn").addClass("btn-secondary")
 
 // remove an existing class
-_("button").removeClass("btn-secondary")
+_("#btn").removeClass("btn-secondary")
 
 // toggle a class
-_("button").toggle("isClicked")
+_("#btn").toggle("isClicked")
+
+// check if a class exists in element
+_("#btn").contains("isClicked") // return true if exists, otherwise false
 
 ```
 
-#### **Manage classes of element**
+#### **Manage attributes of element**
 
 ```js
 

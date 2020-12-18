@@ -108,28 +108,20 @@ class _ {
     return this
   }
 
-  contains(attrName, checkForClassAttr = true) {
-    if (attrName == undefined) {
-      return log("'.contains(attrName, checkForClassAttr)' method needs at least 1 parameter, 0 given.", LOG.error)
+  contains(className) {
+    if (className == undefined) {
+      return log("'.contains(className)' method needs at least 1 parameter, 0 given.", LOG.error)
     }
 
-    if (typeof attrName !== "string") {
-      return log("'.contains(attrName, checkForClassAttr)', The first argument 'attrName' must be a string!", LOG.error)
-    }
-
-    if (typeof checkForClassAttr !== "boolean") {
-      return log("'.contains(attrName, checkForClassAttr)', The second argument 'checkForClassAttr' must be a boolean value!", LOG.error)
+    if (typeof className !== "string") {
+      return log("'.contains(className)', The argument must be a string!", LOG.error)
     }
 
     if (!options.all) {
-      if (checkForClassAttr) {
-        return this.activeElems.classList.contains(attrName)
-      } else {
-        return this.activeElems.hasAttribute(attrName)
-      }
+      return this.activeElems.classList.contains(className)
     }
 
-    return log("'.contains(attrName, checkForClassAttr)' method only for the one active element, you have many!", LOG.error)
+    return log("'.contains(className)' method only for the one active element, you have many!", LOG.error)
   }
 
 
@@ -166,6 +158,22 @@ class _ {
     }
 
     return this
+  }
+
+  has(attrName) {
+    if (attrName == undefined) {
+      return log("'.has(attrName)' method needs at least 1 parameter, 0 given.", LOG.error)
+    }
+
+    if (typeof attrName !== "string") {
+      return log("'.has(attrName)', The argument must be a string!", LOG.error)
+    }
+
+    if (!options.all) {
+      return this.activeElems.hasAttribute(attrName)
+    }
+
+    return log("'.has(attrName)' method only for the one active element, you have many!", LOG.error)
   }
 
   // FOR EVENT
