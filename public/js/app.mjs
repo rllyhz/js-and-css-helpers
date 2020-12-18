@@ -88,14 +88,4 @@ async function main(e) {
     .then(res => console.log(res))
 }
 
-// document.addEventListener("DOMContentLoaded", main);
-
-_("#test").addClass("newClass")
-const exists = _("#test").has("style")
-let result
-
-if (exists) {
-  result = _("#test").attribute("style")
-}
-
-console.log(result)
+document.addEventListener("DOMContentLoaded", main);
