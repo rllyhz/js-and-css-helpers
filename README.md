@@ -16,7 +16,7 @@
     2. Margin and padding helper classes.
     3. Theme preferences.
 
-<br>
+<br><br>
 
 # Javascript Helpers
 
@@ -58,7 +58,7 @@ This javascript helper is the **_()** function that can help us to manage elemen
 
 <br>
 
-### **Usage**
+## **Usage**
 
 #### **Select and get element**
 In order to select an element using this helper, use this code below :
@@ -187,7 +187,7 @@ _("button").removeEvent("click", callback)
 
 ```
 
-<br>
+<br><br>
 
 # CSS Helpers
 
@@ -199,42 +199,107 @@ For example, in **_index.html_** file we have a bunch of lines of code as below 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./public/css/style.css">
   <title>CSS Helpers Demo</title>
+
+  <style>
+    h2 {
+      color: rgb(113, 40, 182);
+      text-align: center;
+    }
+
+    .box {
+      width: 100%;
+      min-height: 40px;
+      background-image: linear-gradient(to right, blueviolet, rgb(113, 40, 182));
+      border-radius: 4px;
+    }
+  </style>
 </head>
+
 <body>
   <div class="container">
+    <h2 class="my-4">Grid Systems</h2>
+
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-3">
+        <div class="box"></div>
         <div class="box"></div>
         <div class="box"></div>
       </div>
     </div>
     <div class="row my-2">
-        <div class="col-md-1">
-          <div class="box"></div>
-          <div class="box"></div>
-        </div>
+      <div class="col-md-2">
+        <div class="box"></div>
+        <div class="box"></div>
       </div>
+    </div>
   </div>
 </body>
+
 </html>
 
 ```
 
-### **Usage**
+**The results are :**
+
+![Example for css helpers](images/example-css.png)
+
+<br>
+
+## **Usage**
 
 #### **Grid systems**
 
-**The results are :**
+```html
 
-Image 1
+<!-- 2 columns in small screen -->
+<div class="row">
+  <div class="col-sm-2">
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</div>
 
-Image 1
 
-Image 1
+<!-- 2 columns in medium screen -->
+<!-- and 1 column in small screen -->
+<div class="row">
+  <div class="col-md-3 col-sm-1">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</div>
 
+
+<!-- available columns are up to 11 -->
+<div class="row">
+  <div class="col-sm-11">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</div>
+
+
+<!-- if you want to use 12 columns, -->
+<!-- use col-sm, col-md, col-lg, col-xl -->
+<div class="row">
+  <div class="col-xl">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</div>
+
+```
+
+<br>
 
 #### **Margin and Padding**
+
