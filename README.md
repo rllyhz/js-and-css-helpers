@@ -115,7 +115,7 @@ _(".sidebar").show()
 _("#btn").click()
 ```
 
-#### **Manange classes of element**
+#### **Manage classes of element**
 
 ```js
 
@@ -130,7 +130,7 @@ _("button").toggle("isClicked")
 
 ```
 
-#### **Manange classes of element**
+#### **Manage classes of element**
 
 ```js
 
