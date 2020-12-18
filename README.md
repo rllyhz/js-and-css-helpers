@@ -193,20 +193,48 @@ _("button").removeEvent("click", callback)
 
 CSS Helper is css library contains a bunch of classes ready to use, like py-2 to indicate that the element has **_padding-top)** and **_padding-bottom_** with the value is 2 (could be _2rem_, _2px_, _2%_, etc).
 
+For example, in **_index.html_** file we have a bunch of lines of code as below :
+
+```html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Helpers Demo</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-2">
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+    </div>
+    <div class="row my-2">
+        <div class="col-md-1">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+      </div>
+  </div>
+</body>
+</html>
+
+```
+
 ### **Usage**
 
 #### **Grid systems**
 
-In index.html file, we have bunch of lines of code as below :
-```html
+**The results are :**
 
+Image 1
 
-```
+Image 1
 
-```css
+Image 1
 
-
-
-```
 
 #### **Margin and Padding**
