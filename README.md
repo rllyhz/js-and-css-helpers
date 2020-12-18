@@ -395,6 +395,8 @@ For example, in **`index.html`** file we have a bunch of lines of code as below 
 
 ```
 
+<br>
+
 > Thanks for visiting my github page 👋
 
 
