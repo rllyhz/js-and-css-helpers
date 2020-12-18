@@ -1,7 +1,6 @@
 # **JS and CSS Helpers**
 
-**Helper for easily creating web project**.
-
+Helper for easily creating web project.
 
 ### **Features :**
 
@@ -19,6 +18,7 @@
     2. Margin and padding helper classes.
     3. Theme preferences.
 
+<br>
 
 # Javascript Helpers
 
@@ -187,6 +187,7 @@ _("button").removeEvent("click", callback)
 
 ```
 
+<br>
 
 # CSS Helpers
 
