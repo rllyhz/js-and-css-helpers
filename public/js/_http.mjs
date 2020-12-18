@@ -67,7 +67,7 @@ function isEmptyObject(object) {
   // Object.keys(obj).length <= 0
   // Object.entries(obj).length <= 0
 
-  if (JSON.stringify(obj) === JSON.stringify({})) {
+  if (JSON.stringify(object) === JSON.stringify({})) {
     return true
   }
   return false
@@ -99,8 +99,16 @@ function processParams(url, opt) {
   if (typeof url !== "string") return log("'.send(url, opt)' The argument 'url' must be a string!")
   if (isEmptyString(url)) return log("'.send(url, opt)' The argument 'url' can not be an empty string!")
 
-  if (!isUndefined(opt) && (typeof opt !== "object")) return log("'.send(url, opt)' The second argument 'opt' must be an object!")
-  if (!isUndefined(opt) && isEmptyObject(opt)) return log("'.send(url, opt)' The second argument 'opt' can not be an empty object!")
+  if (!isNull(opt) && (typeof opt !== "object")) return log("'.send(url, opt)' The second argument 'opt' must be an object!")
+  if (isEmptyObject(opt)) return log("'.send(url, opt)' The second argument 'opt' can not be an empty object!")
+
+  const keys = Object.keys(opt)
+
+  if (keys.length <= 0) return
+
+  keys.forEach(key => {
+    options[key] = opt[key]
+  })
 }
 
 
@@ -112,6 +120,14 @@ const methods = {
   POST: "POST",
   PUT: "PUT",
   DELETE: "DELETE",
+}
+
+const options = {
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  method: methods.GET,
+  body: null
 }
 
 const LOG = {
@@ -126,8 +142,8 @@ const LOG = {
  * @param opt object
  * @returns response Promise
  */
-function send(url, opt = null) {
-  // 
+function send(url, opt) {
+  console.log(options)
 }
 
 /**
@@ -137,7 +153,7 @@ function send(url, opt = null) {
  * @param opt object
  * @returns response Promise
  */
-const _ = (url, opt) => {
+const _ = (url, opt = null) => {
   processParams(url, opt)
   return send(url, opt)
 }

@@ -534,7 +534,7 @@ function isEmptyObject(object) {
   // Object.keys(obj).length <= 0
   // Object.entries(obj).length <= 0
 
-  if (JSON.stringify(obj) === JSON.stringify({})) {
+  if (JSON.stringify(object) === JSON.stringify({})) {
     return true
   }
   return false
