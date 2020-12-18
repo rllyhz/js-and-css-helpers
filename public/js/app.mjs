@@ -82,7 +82,7 @@ async function main(e) {
   //   .then(res => res.json())
   //   .then(res => console.log(res.data))
 
-  console.log(_(""))
+  console.log(_("data"))
 
 }
 

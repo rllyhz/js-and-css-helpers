@@ -61,7 +61,7 @@ function isNull(value) {
  * @param object object
  * @returns boolean
  */
-function isEmptyOpbject(object) {
+function isEmptyObject(object) {
   if (typeof object !== "object") return true
 
   // Object.keys(obj).length <= 0
@@ -94,10 +94,13 @@ function isEmptyString(string) {
  * @param url string
  * @param opt object
  */
-function checkParams(url, opt) {
-  if (isUndefined(url)) return log("'.send(url)' method needs at least 1 parameter, 0 given.")
-  if (typeof url !== "string") return log("'.send(url)' The argument must be a string!")
-  if (isEmptyString(url)) return log("'.send(url)' The argument can not be an empty string!")
+function processParams(url, opt) {
+  if (isUndefined(url)) return log("'.send(url, opt)' method needs at least 1 parameter, 0 given.")
+  if (typeof url !== "string") return log("'.send(url, opt)' The argument 'url' must be a string!")
+  if (isEmptyString(url)) return log("'.send(url, opt)' The argument 'url' can not be an empty string!")
+
+  if (!isUndefined(opt) && (typeof opt !== "object")) return log("'.send(url, opt)' The second argument 'opt' must be an object!")
+  if (!isUndefined(opt) && isEmptyObject(opt)) return log("'.send(url, opt)' The second argument 'opt' can not be an empty object!")
 }
 
 
@@ -126,8 +129,17 @@ const LOG = {
 function send(url, opt = null) {
   // 
 }
+
+/**
+ * Handler for all the requests
+ * 
+ * @param url string
+ * @param opt object
+ * @returns response Promise
+ */
 const _ = (url, opt) => {
-  checkParams(url, opt)
+  processParams(url, opt)
+  return send(url, opt)
 }
 
 export default _
