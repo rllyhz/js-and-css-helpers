@@ -191,8 +191,22 @@ _("button").removeEvent("click", callback)
 
 # CSS Helpers
 
-CSS Helper is
+CSS Helper is css library contains a bunch of classes ready to use, like py-2 to indicate that the element has **_padding-top)** and **_padding-bottom_** with the value is 2 (could be _2rem_, _2px_, _2%_, etc).
 
 ### **Usage**
 
-#### **Select and get element**
+#### **Grid systems**
+
+In index.html file, we have bunch of lines of code as below :
+```html
+
+
+```
+
+```css
+
+
+
+```
+
+#### **Margin and Padding**
