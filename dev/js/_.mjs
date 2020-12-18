@@ -45,7 +45,7 @@ class _ {
 
   // FOR CLASS
   addClass(className) {
-    if (className == undefined) {
+    if (isUndefined(className)) {
       return log("'.addClass(className)' method needs at least 1 parameter, 0 given.", LOG.error)
     }
 
@@ -65,7 +65,7 @@ class _ {
   }
 
   removeClass(className) {
-    if (className == undefined) {
+    if (isUndefined(className)) {
       return log("'.removeClass(className)' method needs at least 1 parameter, 0 given.", LOG.error)
     }
 
@@ -85,7 +85,7 @@ class _ {
   }
 
   toggle(className) {
-    if (className == undefined) {
+    if (isUndefined(className)) {
       return log("'.toggle(className)' method needs at least 1 parameter, 0 given.", LOG.error)
     }
 
@@ -93,7 +93,7 @@ class _ {
       return log("'.toggle(className)', The argument must be a string!", LOG.error)
     }
 
-    if (!className) {
+    if (isEmptyString(className)) {
       return log("'.toggle(className)', The argument can not be an empty string!", LOG.error)
     }
 
@@ -108,9 +108,26 @@ class _ {
     return this
   }
 
+  contains(className) {
+    if (isUndefined(className)) {
+      return log("'.contains(className)' method needs at least 1 parameter, 0 given.", LOG.error)
+    }
+
+    if (typeof className !== "string") {
+      return log("'.contains(className)', The argument must be a string!", LOG.error)
+    }
+
+    if (!options.all) {
+      return this.activeElems.classList.contains(className)
+    }
+
+    return log("'.contains(className)' method only for the one active element, you have many!", LOG.error)
+  }
+
+
   // FOR ATTRIBUTES
   attribute(attr, value = undefined) {
-    if (attr == undefined) {
+    if (isUndefined(attr)) {
       return log("'.attribute(attr, value)' method needs at least 1 parameter, 0 given.", LOG.error)
     }
 
@@ -118,11 +135,11 @@ class _ {
       return log("'.attribute(attr, value)', The first argument 'attr' must be a string!", LOG.error)
     }
 
-    if (!attr) {
+    if (isEmptyString(attr)) {
       return log("'.attribute(attr, value)', The first argument 'attr' can not be an empty string!", LOG.error)
     }
 
-    if (value === undefined) {
+    if (isUndefined(value)) {
       if (!options.all) {
         return this.activeElems.getAttribute(attr)
       }
@@ -143,13 +160,29 @@ class _ {
     return this
   }
 
+  has(attrName) {
+    if (isUndefined(attrName)) {
+      return log("'.has(attrName)' method needs at least 1 parameter, 0 given.", LOG.error)
+    }
+
+    if (typeof attrName !== "string") {
+      return log("'.has(attrName)', The argument must be a string!", LOG.error)
+    }
+
+    if (!options.all) {
+      return this.activeElems.hasAttribute(attrName)
+    }
+
+    return log("'.has(attrName)' method only for the one active element, you have many!", LOG.error)
+  }
+
   // FOR EVENT
   on(event, callback) {
     if (typeof event !== "string") {
       return log("'.on(event, callback)' The first argument 'event' must be a string!", LOG.error)
     }
 
-    if (event === "") {
+    if (isEmptyString(event)) {
       return log("'.on(event, callback)' The first argument 'event' can not be an empty string!", LOG.error)
     }
 
@@ -173,7 +206,7 @@ class _ {
       return log("'.on(event, existingCallback)' The first argument 'event' must be a string!", LOG.error)
     }
 
-    if (event === "") {
+    if (isEmptyString(event)) {
       return log("'.on(event, existingCallback)' The first argument 'event' can not be an empty string!", LOG.error)
     }
 
@@ -336,15 +369,46 @@ function log(message = "", type = 0) {
   throw new Error("")
 }
 
-function getElements(selector = "") {
-  if (selector === null) return
+function isUndefined(value) {
+  if (value === undefined) { return true }
+  return false
+}
 
-  if (selector == "") {
+function isNull(value) {
+  if (value === null) { return true }
+  return false
+}
+
+function isEmptyOpbject(object) {
+  if (typeof object !== "object") return true
+
+  // Object.keys(obj).length <= 0
+  // Object.entries(obj).length <= 0
+
+  if (JSON.stringify(obj) === JSON.stringify({})) {
+    return true
+  }
+  return false
+}
+
+function isEmptyString(string) {
+  if (typeof string !== "string") return true
+
+  if (string === "") {
+    return true
+  }
+  return false
+}
+
+function getElements(selector = "") {
+  if (isNull(selector)) return
+
+  if (isEmptyString(selector)) {
     return log("'_()', Selector must be given!", LOG.error)
   }
 
-  if (document.querySelector(selector) == null) {
-    return log(`'_()', Results of selector '${selector}' doesn't exist!`, LOG.error)
+  if (isNull(document.querySelector(selector))) {
+    return log(`'_()', The results of selector '${selector}' not found!`, LOG.error)
   }
 
   if (options.all) {
@@ -362,11 +426,11 @@ function runCallback() {
 
 function prepareUp(arg, opt = null) {
 
-  if (arg == undefined) {
+  if (isUndefined(arg)) {
     return log(`'_()' function needs at least 1 parameter, 0 given.`, LOG.error)
   }
 
-  if (opt !== null) {
+  if (!isNull(opt) && !isEmptyOpbject(opt)) {
     options.all = opt.all ? opt.all : options.all
   }
 
@@ -383,14 +447,14 @@ function prepareUp(arg, opt = null) {
 }
 
 function solve() {
-  if (cssSelector === null) return
+  if (isNull(cssSelector)) return
 
   getElements(cssSelector)
   return collection
 }
 
 
-export default (handler, opt = null) => {
-  prepareUp(handler, opt)
+export default (arg, opt = null) => {
+  prepareUp(arg, opt)
   return solve()
 }
