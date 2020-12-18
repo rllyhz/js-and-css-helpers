@@ -159,7 +159,7 @@ _("button").styles({
 ```
 
 
-#### **Add styles to element**
+#### **Add events to element**
 
 ```js
 
