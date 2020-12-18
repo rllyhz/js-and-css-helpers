@@ -47,7 +47,7 @@ These helpers located in : <br>
 
 Or you can customize them by modifying these two files : <br>
 **JS Helpers** : `dev/js/_.mjs` <br>
-**CSS Helpers** : `dev/css/style.css` <br>
+**CSS Helpers** : `dev/scss/style.scss` <br>
 <br>
 
 <h1 id="javascript-helpers">Javascript Helpers</h1>
