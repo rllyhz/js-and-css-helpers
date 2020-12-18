@@ -39,7 +39,7 @@ This javascript helpers is the **_()** function that can help us to manage eleme
 
 - **_.toggle()_** method, to toggle a class in the selected element.
 
-- **_.attribute()_** method, to manage (get and set) attributes of the selected element.
+- **_.attribute()_** method, to manage (_get and set_) attributes of the selected element.
 
 - **_.style()_** method, to add **a style** to the selected element.
 
