@@ -108,6 +108,31 @@ class _ {
     return this
   }
 
+  contains(attrName, checkForClassAttr = true) {
+    if (attrName == undefined) {
+      return log("'.contains(attrName, checkForClassAttr)' method needs at least 1 parameter, 0 given.", LOG.error)
+    }
+
+    if (typeof attrName !== "string") {
+      return log("'.contains(attrName, checkForClassAttr)', The first argument 'attrName' must be a string!", LOG.error)
+    }
+
+    if (typeof checkForClassAttr !== "boolean") {
+      return log("'.contains(attrName, checkForClassAttr)', The second argument 'checkForClassAttr' must be a boolean value!", LOG.error)
+    }
+
+    if (!options.all) {
+      if (checkForClassAttr) {
+        return this.activeElems.classList.contains(attrName)
+      } else {
+        return this.activeElems.hasAttribute(attrName)
+      }
+    }
+
+    return log("'.contains(attrName, checkForClassAttr)' method only for the one active element, you have many!", LOG.error)
+  }
+
+
   // FOR ATTRIBUTES
   attribute(attr, value = undefined) {
     if (attr == undefined) {

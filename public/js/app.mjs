@@ -88,4 +88,8 @@ async function main(e) {
     .then(res => console.log(res))
 }
 
-document.addEventListener("DOMContentLoaded", main);
+// document.addEventListener("DOMContentLoaded", main);
+
+const result = _("#test").contains("newClass")
+
+console.log(result)
