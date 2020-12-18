@@ -1,0 +1,44 @@
+// (c) Copyrights
+// MIT LICENSE
+// 
+// @author Rully Ihza Mahendra <rullyihza00@gmail.com>
+// @page https://github.com/rllyhz
+
+button, button.btn, a.btn, .btn {
+  padding: .35rem .85rem;
+  background-color: $btnBackgroundColorDefault;
+  color: $btnTextColorDefault;
+  border: none;
+  outline: none;
+  border-radius: $btnBorderRadiusSizeDefault;
+
+  &.btn-primary {
+    background-color: $btnBackgroundColorPrimary;
+    color: $btnTextColorPrimary;
+  }
+  &.btn-primary {
+    background-color: $btnBackgroundColorPrimary;
+    color: $btnTextColorPrimary;
+  }
+  &.btn-secondary {
+    background-color: $btnBackgroundColorSecondary;
+    color: $btnTextColorSecondary;
+  }
+  &.btn-accent {
+    background-color: $btnBackgroundColorAccent;
+    color: $btnTextColorAccent;
+  }
+
+  &.btn-sm {
+    padding: .35rem .85rem;
+  }
+  &.btn-md {
+    padding: .45rem 1rem;
+  }
+  &.btn-lg {
+    padding: .55rem 1.15rem;
+  }
+  &.btn-xl {
+    padding: .65rem 1.25rem;
+  }
+}

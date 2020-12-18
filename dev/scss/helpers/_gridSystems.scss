@@ -1,0 +1,137 @@
+// (c) Copyrights
+// MIT LICENSE
+// 
+// @author Rully Ihza Mahendra <rullyihza00@gmail.com>
+// @page https://github.com/rllyhz
+
+
+@mixin gridContainer {
+  display: grid;
+  grid-template-rows: 1fr;
+  column-gap: $gridGap;
+  row-gap: $gridGap;
+}
+
+.row {
+  display: block;
+  margin: $gridGap 0;
+}
+
+// FOR GRID NORMAL
+@for $indexColumn from $totalGridColumn to 1 {
+  .row {
+    @if ($indexColumn == 12) {
+      .col {
+        @include gridContainer();
+        grid-template-columns: repeat($indexColumn, 1fr);
+      }
+    }
+
+    @if ($indexColumn < 12) {
+      .col-#{$indexColumn} {
+        @include gridContainer();
+        grid-template-columns: repeat($indexColumn, 1fr);
+      }
+    }
+  }
+}
+
+// FOR GRID SMALL SCREEN
+@for $indexColumn from $totalGridColumn to 1 {
+  .row {
+    @if ($indexColumn == 12) {
+      .col-sm {
+        @include gridContainer();
+
+        @media (max-width: 678px) {
+          grid-template-columns: repeat($indexColumn, 1fr);
+        }
+      }
+    }
+
+    @if ($indexColumn < 12) {
+      .col-sm-#{$indexColumn} {
+        @include gridContainer();
+
+        @media (max-width: 678px) {
+          grid-template-columns: repeat($indexColumn, 1fr);
+        }
+      }
+    }
+  }
+}
+
+// FOR GRID MEDIUM SCREEN
+@for $indexColumn from $totalGridColumn to 1 {
+  .row {
+    @if ($indexColumn == 12) {
+      .col-md {
+        @include gridContainer();
+
+        @media (min-width:679px) and (max-width: 1099px) {
+          grid-template-columns: repeat($indexColumn, 1fr);
+        }
+      }
+    }
+
+    @if ($indexColumn < 12) {
+      .col-md-#{$indexColumn} {
+        @include gridContainer();
+
+        @media (min-width:679px) and (max-width: 1099px) {
+          grid-template-columns: repeat($indexColumn, 1fr);
+        }
+      }
+    }
+  }
+}
+
+// FOR GRID LARGE SCREEN
+@for $indexColumn from $totalGridColumn to 1 {
+  .row {
+    @if ($indexColumn == 12) {
+      .col-lg {
+        @include gridContainer();
+
+        @media (min-width: 1100px) and (max-width: 1300px) {
+          grid-template-columns: repeat($indexColumn, 1fr);
+        }
+      }
+    }
+
+    @if ($indexColumn < 12) {
+      .col-lg-#{$indexColumn} {
+        @include gridContainer();
+
+        @media (min-width: 1100px) and (max-width: 1300px) {
+          grid-template-columns: repeat($indexColumn, 1fr);
+        }
+      }
+    }
+  }
+}
+
+// FOR GRID XLARGE SCREEN
+@for $indexColumn from $totalGridColumn to 1 {
+  .row {
+    @if ($indexColumn == 12) {
+      .col-xl {
+        @include gridContainer();
+
+        @media (min-width: 1301px) {
+          grid-template-columns: repeat($indexColumn, 1fr);
+        }
+      }
+    }
+
+    @if ($indexColumn < 12) {
+      .col-xl-#{$indexColumn} {
+        @include gridContainer();
+
+        @media (min-width: 1301px) {
+          grid-template-columns: repeat($indexColumn, 1fr);
+        }
+      }
+    }
+  }
+}

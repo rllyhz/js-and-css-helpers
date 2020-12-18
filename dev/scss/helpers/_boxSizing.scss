@@ -1,0 +1,71 @@
+// (c) Copyrights
+// MIT LICENSE
+// 
+// @author Rully Ihza Mahendra <rullyihza00@gmail.com>
+// @page https://github.com/rllyhz
+
+
+// MARGIN VERTICALLY & HORIZONTALLY
+@for $index from 1 to $totalVariantSizes {
+  .mx-#{$index} {
+    margin-left: $index * $marginSize;
+    margin-right: $index * $marginSize;
+  }
+
+  .my-#{$index} {
+    margin-top: $index * $marginSize;
+    margin-bottom: $index * $marginSize;
+  }
+}
+
+// PADDING VERTICALLY & HORIZONTALLY
+@for $index from 0 to $totalVariantSizes {
+  .py-#{$index} {
+    padding-top: $index * $paddingSize;
+    padding-bottom: $index * $paddingSize;
+  }
+
+  .px-#{$index} {
+    padding-left: $index * $paddingSize;
+    padding-right: $index * $paddingSize;
+  }
+}
+
+
+// MARGIN
+@for $index from 0 to $totalVariantSizes {
+  .mt-#{$index} {
+    margin-top: $index * $marginSize;
+  }
+
+  .mr-#{$index} {
+    margin-right: $index * $marginSize;
+  }
+
+  .mb-#{$index} {
+    margin-bottom: $index * $marginSize;
+  }
+
+  .ml-#{$index} {
+    margin-left: $index * $marginSize;
+  }
+}
+
+// PADDING
+@for $index from 0 to $totalVariantSizes {
+  .pt-#{$index} {
+    padding-top: $index * $paddingSize;
+  }
+
+  .pr-#{$index} {
+    padding-right: $index * $paddingSize;
+  }
+
+  .pb-#{$index} {
+    padding-bottom: $index * $paddingSize;
+  }
+
+  .pl-#{$index} {
+    padding-left: $index * $paddingSize;
+  }
+}

@@ -1,0 +1,71 @@
+// (c) Copyrights
+// MIT LICENSE
+// 
+// @author Rully Ihza Mahendra <rullyihza00@gmail.com>
+// @page https://github.com/rllyhz
+
+
+$types: ("mobile", "tablet", "desktop");
+
+@mixin hideContent($type) {
+  @content;
+
+  @if ($type == "mobile") {
+    @media (max-width: 678px)  {
+      display: none;
+    }
+  }
+
+  @if ($type == "tablet") {
+    @media (min-width: 679px) and (max-width: 1099px) {
+      display: none;
+    }
+  }
+
+  @if ($type == "desktop") {
+    @media (min-width: 1100px) {
+      display: none;
+    }
+  }
+}
+
+
+.hide-for-mobile {
+  @include hideContent("mobile");
+}
+
+.hide-for-tablet {
+  @include hideContent("tablet");
+}
+
+.hide-for-desktop {
+  @include hideContent("desktop");
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.visible, .visible-block {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.visible-grid {
+  display: grid;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.visible-flex {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}

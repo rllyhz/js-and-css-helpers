@@ -1,0 +1,60 @@
+// (c) Copyrights
+// MIT LICENSE
+// 
+// @author Rully Ihza Mahendra <rullyihza00@gmail.com>
+// @page https://github.com/rllyhz
+
+@mixin displayGridNav {
+  display: grid;
+  grid-template-columns: minmax(auto, 40%) minmax(auto, 40%) minmax(auto, 40%);
+}
+
+header, header.header, .header {
+  background-color: $headerBackground;
+  display: grid;
+  place-items: center;
+
+  nav.nav, .nav, div.nav {
+    width: $containerSizeLg;
+    padding: 1.45rem 0;
+    @include displayGridNav();
+
+    &-sm {
+      width: $containerSizeSm;
+      padding: .85rem 0;
+      @include displayGridNav();
+    }
+
+    &-md {
+      width: $containerSizeMd;
+      padding: 1.15rem 0;
+      @include displayGridNav();
+    }
+
+    &-lg {
+      width: 90%;
+      @include displayGridNav();
+    }
+
+    &-full {
+      width: 100%;
+      @include displayGridNav();
+    }
+
+    & .nav-brand {
+      // 
+    }
+
+    & .nav-links {
+      // 
+
+      a {
+        color: $linksColor;
+      }
+
+      a:not(:last-child) {
+        margin-right: $distanceOfLinks;
+      }
+    }
+  }
+}

@@ -1,0 +1,66 @@
+// (c) Copyrights
+// MIT LICENSE
+// 
+// @author Rully Ihza Mahendra <rullyihza00@gmail.com>
+// @page https://github.com/rllyhz
+
+html {
+  font-size: 100%;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  background-color: $backgroundColor;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+}
+
+a, a:active, a:hover {
+  text-decoration: none;
+}
+
+p, a, h1, h2, h3, h4, h5, h6 {
+  color: $colorDefault;
+}
+
+.container {
+  width: $containerSizeLg;
+  margin: 0 auto;
+
+  &-sm {
+    width: $containerSizeSm;
+    margin: 0 auto;
+  }
+
+  &-md {
+    width: $containerSizeMd;
+    margin: 0 auto;
+  }
+
+  &-lg {
+    width: $containerSizeLg;
+    margin: 0 auto;
+  }
+
+  &-full {
+    width: 100%;
+  }
+}
+
+main, main.main, div.main {
+
+  p,a,h1,h2,h3,h4,h5,h6 {
+    color: $darkColorDefault;
+  }
+}
+
+

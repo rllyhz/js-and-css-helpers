@@ -1,0 +1,87 @@
+// (c) Copyrights
+// MIT LICENSE
+// 
+// @author Rully Ihza Mahendra <rullyihza00@gmail.com>
+// @page https://github.com/rllyhz
+
+
+//  --------------------------------------------------
+//  -------------------- COLORS ----------------------
+//  --------------------------------------------------
+$colorDefault: aliceblue;
+$darkColorDefault: rgb(93, 121, 145);
+
+$colorPrimary: white;
+$colorSecondary: white;
+$colorAccent: rgb(92, 60, 134);
+
+$backgroundPrimary: $colorPrimary;
+$backgroundSecondary: $colorSecondary;
+$backgroundAccent: $colorAccent;
+
+$backgroundColor: white;
+
+// headers
+$headerBackground: $darkColorDefault;
+$linksColor: $colorDefault;
+
+// tables
+$tableBackground: $darkColorDefault;
+$tableBackgroundOpacity: 1;
+$tableTextColor: $colorDefault;
+
+// forms
+$formGroupBackground: none;
+$formInputBackground: $colorDefault;
+$formInputTextColor: $darkColorDefault;
+
+// buttons
+$btnBackgroundColorDefault: white;
+$btnTextColorDefault: $colorAccent;
+$btnBackgroundColorPrimary: $backgroundPrimary;
+$btnTextColorPrimary: $colorAccent;
+$btnBackgroundColorSecondary: $backgroundSecondary;
+$btnTextColorSecondary: $colorAccent;
+$btnBackgroundColorAccent: $backgroundAccent;
+$btnTextColorAccent: white;
+
+$btnBorderRadiusSizeDefault: 3px;
+$btnBorderRadiusSizeSm: $btnBorderRadiusSizeDefault;
+$btnBorderRadiusSizeMd: 4px;
+$btnBorderRadiusSizeLg: 8px;
+$btnBorderRadiusSizeXlg: 12px;
+
+
+//  --------------------------------------------------
+//  -------------------- SIZINGS ---------------------
+//  --------------------------------------------------
+
+$containerSizeSm: 80%;
+$containerSizeMd: 86%;
+$containerSizeLg: 94%;
+
+$containerPaddingSm: .65rem;
+$containerPaddingMd: .85rem;
+$containerPaddingLg: 1rem;
+
+$distanceOfLinks: 3rem;
+
+
+//  --------------------------------------------------
+//  --------------- BOX SIZING HELPERS ---------------
+//  --------------------------------------------------
+$totalVariantSizes: 6;
+$marginSize: 0.65rem;
+$paddingSize: 0.65rem;
+
+
+//  --------------------------------------------------
+//  ------------------ GRID HELPERS ------------------
+//  --------------------------------------------------
+$totalGridColumn: 12;
+$gridGap: .2rem;
+
+
+//  --------------------------------------------------
+//  ------------------- ANIMATIONS -------------------
+//  --------------------------------------------------
