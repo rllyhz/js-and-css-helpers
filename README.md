@@ -52,7 +52,7 @@ Or you can customize them by modifying these two files : <br>
 
 <h1 id="javascript-helpers">Javascript Helpers</h1>
 
-This javascript helper is the **_()** function that can help us to manage element in javascript.
+This javascript helper is the **_()** function that can help us to easily manage elements in javascript.
 
 <h3 id="available-methods"><b>Available Methods</b></h3>
 
@@ -113,11 +113,11 @@ _("div").get() // to get the selected element.
 
 ```js
 
-_("div").get() // this returns only the first selected element.
+_("div").get() // this returns only the first selected element of div.
 
 ```
 
-and it will also effect to all of the available methods, running for only the active element. If you want to change this behavior, set all of the selected elements to be an active state, by passing an option like this:
+and it will also effect to all of the available methods, will be running for only the active element. If you want to change this behavior, set all of the selected elements to be an active state, by passing an option like this:
 
 ```js
 
@@ -405,6 +405,6 @@ For example, in **`index.html`** file we have a bunch of lines of code as below 
 | Social Media | Link |
 | :-           | :-: |
 | [Github](https://github.com/rllyhz "My Github Page") | [https://github.com/rllyhz](https://github.com/rllyhz "My Github Page")
-| [Twitter](https://twitter.com/rllyhz "Follow me on Twitter") | [https://twitter.com/rllyhz](https://instagram.com/rllyhz "Follow me on Twitter")
+| [Twitter](https://twitter.com/rllyhz "Follow me on Twitter") | [https://twitter.com/rllyhz](https://twitter.com/rllyhz "Follow me on Twitter")
 | [Instagram](https://instagram.com/rllyhz "Follow me on Instagram") | [https://instagram.com/rllyhz](https://instagram.com/rllyhz "Follow me on Instagram")
-| [Facebook](https://github.com/rllyhz "Follow me on Facebook") | [https://facebook.com/rully.ihza](https://facebook.com/rully.ihza "Follow me on Facebook")
+| [Facebook](https://facebook.com/rully.ihza "Follow me on Facebook") | [https://facebook.com/rully.ihza](https://facebook.com/rully.ihza "Follow me on Facebook")
