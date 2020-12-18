@@ -14,12 +14,13 @@
 2. **CSS Helper for styling**
     1. Grid Systems support.
     2. Margin and padding helper classes.
+    3. Theme preferences.
 
 <br>
 
 # Javascript Helpers
 
-This javascript helpers is the **_()** function that can help us to manage element in javascript.
+This javascript helper is the **_()** function that can help us to manage element in javascript.
 
 <br>
 
@@ -189,3 +190,9 @@ _("button").removeEvent("click", callback)
 <br>
 
 # CSS Helpers
+
+CSS Helper is
+
+### **Usage**
+
+#### **Select and get element**
