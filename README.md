@@ -1,20 +1,23 @@
+<h1 id="title"><b>JS and CSS Helpers</b></h1>
+
+Helper for easily creating web project.
+
+<br>
+
 <h2 id="table-of-contents">Table of Contents</h2>
 
 | judul | desctiption |
 | ----- | ----------- |
-| [Title](#title) | Title of page |
-| [Features](#features) | Features of these library |
-| [Installation](#installation) | Instrusctions for installing the library |
-| [Javascript Helpers](#javascript-helpers) | ... |
-| [Available Methods](#available-methods) | ... |
-| [Javascript Helpers Usage](#javascript-helpers-usage) | ... |
-| [CSS Helpers](#css-helpers) | ... |
-| [CSS Helpers Usage](#css-helpers-usage) | ... |
+| [Title](#title) | Title of this page |
+| [Features](#features) | The features of these libraries |
+| [Installation](#installation) | Instrusctions for installing |
+| [Javascript Helpers](#javascript-helpers) | Javascript Helpers explanation |
+| [Available Methods](#available-methods) | Available methods in Javascript Helpers |
+| [Javascript Helpers Usage](#javascript-helpers-usage) | How to use this Javascript Helpers? |
+| [CSS Helpers](#css-helpers) | CSS Helpers explanation |
+| [CSS Helpers Usage](#css-helpers-usage) | How to use this CSS Helpers? |
 
-
-<h1 id="title"><b>JS and CSS Helpers</b></h1>
-
-Helper for easily creating web project.
+<br>
 
 <h3 id="features"><b>Features :</b></h3>
 
@@ -36,8 +39,15 @@ Helper for easily creating web project.
 
 <h2 id="installation">Installation</h2>
 
-Heloodfsd
+Simply, you can fork or clone this repo to get started or you can just download this repo.
 
+These helpers located in : <br>
+**JS Helpers** : `public/js/_.mjs` <br>
+**CSS Helpers** : `public/css/style.css` <br>
+
+Or you can customize them by modifying these two files : <br>
+**JS Helpers** : `dev/js/_.mjs` <br>
+**CSS Helpers** : `dev/css/style.css` <br>
 <br>
 
 <h1 id="javascript-helpers">Javascript Helpers</h1>
@@ -46,35 +56,35 @@ This javascript helper is the **_()** function that can help us to manage elemen
 
 <h3 id="available-methods"><b>Available Methods</b></h3>
 
-- **_.get()_** method, to get the selected element.
+- **_`.get()`_** method, to get the selected element.
 
-- **_.click()_** method, to click the selected element.
+- **_`.click()`_** method, to click the selected element.
 
-- **_.hide()_** method, to the selected element disappear.
+- **_`.hide()`_** method, to the selected element disappear.
 
-- **_.show()_** method, to make the selected element appear.
+- **_`.show()`_** method, to make the selected element appear.
 
-- **_.addClass()_** method, to add new class to the selected element.
+- **_`.addClass()`_** method, to add new class to the selected element.
 
-- **_.removeClass()_** method, to remove existing class in the selected element.
+- **_`.removeClass()`_** method, to remove existing class in the selected element.
 
-- **_.toggle()_** method, to toggle a class in the selected element.
+- **_`.toggle()`_** method, to toggle a class in the selected element.
 
-- **_.attribute()_** method, to manage (_get and set_) attributes of the selected element.
+- **_`.attribute()`_** method, to manage (_get and set_) attributes of the selected element.
 
-- **_.style()_** method, to add **a style** to the selected element.
+- **_`.style()`_** method, to add **a style** to the selected element.
 
-- **_.styles()_** method, to add **some styles** to the selected element.
+- **_`.styles()`_** method, to add **some styles** to the selected element.
 
-- **_.on()_** method, to add **any event** to the selected element.
+- **_`.on()`_** method, to add **any event** to the selected element.
 
-- **_.onClick()_** method, to add a new **click event** to the selected element.
+- **_`.onClick()`_** method, to add a new **click event** to the selected element.
 
-- **_.onHover()_** method, to add a new **mouseenter event** to the selected element.
+- **_`.onHover()`_** method, to add a new **mouseenter event** to the selected element.
 
-- **_.onUnhover()_** method, to add a new **mouseout event** to the selected element.
+- **_`.onUnhover()`_** method, to add a new **mouseout event** to the selected element.
 
-- **_.removeEvent()_** method, to remove existing event in the selected element.
+- **_`.removeEvent()`_** method, to remove existing event in the selected element.
 
 <h2 id="javascript-helpers-usage"><b>Usage</b></h4>
 
@@ -91,7 +101,7 @@ _(".nav-bar")
 
 ```
 
-This is just like **_document.querySelector("cssSelector")_**. They are technically the same. But, The result are not the same. The result has many methods you can run to. For example :
+This is just like **_`document.querySelector("cssSelector")`_** in native javascript. They are technically the same. But, The result are not the same. The result has many methods you can run to. For example :
 
 ```js
 
@@ -99,7 +109,7 @@ _("div").get() // to get the selected element.
 
 ```
 
-**But, keep in mind**. As default, the **.get()** method always returns only **one active element**. It means that only the first selected element will be returned. For example in the previous code :
+**But, keep in mind**. As default, the **`.get()`** method always returns only **one active element**. It means that only the first selected element will be returned. For example in the previous code :
 
 ```js
 
@@ -210,9 +220,9 @@ _("button").removeEvent("click", callback)
 
 <h1 id="css-helpers">CSS Helpers</h1>
 
-CSS Helper is css library contains a bunch of classes ready to use, like **_py-2_** to indicate that the element has **_padding-top)** and **_padding-bottom_** with the value is 2 (could be _2rem_, _2px_, _2%_, etc).
+CSS Helper is css library contains a bunch of classes ready to use, like **_`py-2`_** to indicate that the element has **_`padding-top`_** and **_`padding-bottom`_** with the value is 2 (could be _`2rem`_, _`2px`_, _`2%`_, etc).
 
-For example, in **_index.html_** file we have a bunch of lines of code as below :
+For example, in **`index.html`** file we have a bunch of lines of code as below :
 
 ```html
 
